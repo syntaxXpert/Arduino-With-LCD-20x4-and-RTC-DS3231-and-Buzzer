@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "author": "Farrel Musyaffa",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 154.2, "left": -173.4, "attrs": {} },
+    { "type": "wokwi-lcd2004", "id": "lcd1", "top": -136.04, "left": -51.2, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": 157.8, "left": 211.3, "attrs": {} },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 21.6,
+      "left": -219,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "bz1:1", "uno:GND.1", "black", [ "v38.4", "h134.4" ] ],
+    [ "bz1:2", "uno:8", "red", [ "v28.8", "h182" ] ],
+    [ "lcd1:RS", "uno:7", "green", [ "v0" ] ],
+    [ "lcd1:D4", "uno:5", "green", [ "v38.4", "h-38.4" ] ],
+    [ "lcd1:D5", "uno:4", "green", [ "v48", "h-38.3" ] ],
+    [ "lcd1:D6", "uno:3", "green", [ "v57.6", "h-38.2" ] ],
+    [ "lcd1:D7", "uno:2", "green", [ "v67.2", "h-38.1" ] ],
+    [ "lcd1:A", "rtc1:5V", "red", [ "v105.6", "h67.1", "v28.8" ] ],
+    [
+      "lcd1:K",
+      "uno:GND.3",
+      "black",
+      [ "v57.6", "h76.8", "v67.2", "h-76.8", "v230.4", "h-119.2" ]
+    ],
+    [ "uno:A5", "rtc1:SCL", "green", [ "v19.1", "h81.1", "v-163.2" ] ],
+    [ "uno:A4", "rtc1:SDA", "green", [ "v28.7", "h109.8", "v-182.4" ] ],
+    [ "uno:5V", "rtc1:5V", "red", [ "v67.1", "h157.4", "v-230.4" ] ],
+    [ "lcd1:E", "uno:6", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
